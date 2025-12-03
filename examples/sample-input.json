@@ -1,0 +1,16 @@
+{
+    "user": {
+        "id": 1,
+        "name": "John Doe",
+        "email": "john@test.com",
+        "posts": [
+            {
+                "id": 1,
+                "title": "First Post",
+                "body": "This is the post body",
+                "published": true
+            }
+        ]
+    }
+}
+

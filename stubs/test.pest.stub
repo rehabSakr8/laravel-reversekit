@@ -1,0 +1,32 @@
+<?php
+
+declare(strict_types=1);
+
+use {{ modelNamespace }}\{{ model }};
+{{ imports }}
+use Illuminate\Foundation\Testing\RefreshDatabase;
+
+uses(RefreshDatabase::class);
+
+describe('{{ model }}', function () {
+    it('can list {{ modelPlural }}', function () {
+{{ listTest }}
+    });
+
+    it('can create a {{ modelSingular }}', function () {
+{{ createTest }}
+    });
+
+    it('can show a {{ modelSingular }}', function () {
+{{ showTest }}
+    });
+
+    it('can update a {{ modelSingular }}', function () {
+{{ updateTest }}
+    });
+
+    it('can delete a {{ modelSingular }}', function () {
+{{ deleteTest }}
+    });
+});
+

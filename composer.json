@@ -1,0 +1,51 @@
+{
+    "name": "shaqi-labs/laravel-reversekit",
+    "description": "Generate complete Laravel backend scaffolding from JSON structures",
+    "version": "1.0.0",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "laravel",
+        "scaffolding",
+        "generator",
+        "json",
+        "api",
+        "reverse-engineering"
+    ],
+    "authors": [
+        {
+            "name": "Ishtiaq Ahmed",
+            "email": "rajaishtiaq6@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^10.0|^11.0|^12.0",
+        "illuminate/console": "^10.0|^11.0|^12.0",
+        "illuminate/filesystem": "^10.0|^11.0|^12.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^8.0|^9.0|^10.0",
+        "phpunit/phpunit": "^10.0|^11.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Shaqi\\ReverseKit\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Shaqi\\ReverseKit\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Shaqi\\ReverseKit\\ReverseKitServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
+

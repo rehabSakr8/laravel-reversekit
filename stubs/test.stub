@@ -1,0 +1,56 @@
+<?php
+
+declare(strict_types=1);
+
+namespace {{ namespace }};
+
+use {{ modelNamespace }}\{{ model }};
+{{ imports }}
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\TestCase;
+
+class {{ class }} extends TestCase
+{
+    use RefreshDatabase;
+
+    /**
+     * Test listing {{ modelPlural }}.
+     */
+    public function test_can_list_{{ modelPluralSnake }}(): void
+    {
+{{ listTest }}
+    }
+
+    /**
+     * Test creating a {{ modelSingular }}.
+     */
+    public function test_can_create_{{ modelSingularSnake }}(): void
+    {
+{{ createTest }}
+    }
+
+    /**
+     * Test showing a {{ modelSingular }}.
+     */
+    public function test_can_show_{{ modelSingularSnake }}(): void
+    {
+{{ showTest }}
+    }
+
+    /**
+     * Test updating a {{ modelSingular }}.
+     */
+    public function test_can_update_{{ modelSingularSnake }}(): void
+    {
+{{ updateTest }}
+    }
+
+    /**
+     * Test deleting a {{ modelSingular }}.
+     */
+    public function test_can_delete_{{ modelSingularSnake }}(): void
+    {
+{{ deleteTest }}
+    }
+}
+
